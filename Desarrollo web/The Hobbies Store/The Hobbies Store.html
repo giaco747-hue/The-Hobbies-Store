@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hobbies Store</title>
+
+  <link rel="shortcut icon" href="C:/Users/giaco/OneDrive/Escritorio/Desarrollo web/Aviacion/assets/logos/Tienda de hobbies retro y neón.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+
+    background-image: url("C:\\Users\\giaco\\OneDrive\\Escritorio\\Desarrollo web\\The Hobbies Store\\assets\\logos\\Atardecer retro con palmeras.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(8, 8, 8, 0.6);
+    border-bottom: 2px solid red;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+    position: relative; 
+}
+
+header img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px; 
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-family: "Honk", system-ui;
+    font-size: 60px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(232, 233, 240);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: rgb(5, 1, 1);
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* estilo general de las cards */
+.card {
+    background-color: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+/* card de texto en vertical */
+.texto {
+    display: flex;
+    flex-direction: column; /* ← esto hace el orden vertical */
+    gap: 10px;
+}
+
+.imagen {
+    width: 500px;
+    flex-shrink: 0;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(8, 8, 8, 0.6);
+    border-bottom: 2px solid red;
+    padding: 10px 30px;
+    margin-top: 30px;
+}
+
+footer img {
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>The Hobbies Store</h1>
+  <img src="C:\Users\giaco\OneDrive\Escritorio\Desarrollo web\The Hobbies Store\assets\logos\Tienda de hobbies retro y neón.png" alt="logo de la tienda">
+  
+  <nav>
+    <a href="galeria.html">Galeria</a>
+    <a href="Aviones.html">Aviones</a>
+    <a href="Drones Proyect.html">Drones</a>
+    <a href="Carros Proyect.html">Carros</a>
+    <a href="Tanques Proyect.html">Tanques</a>
+  </nav>
+</header>
+
+<h2><strong>Nuestra Tienda de Hobbies on-line</strong></h2>
+
+<p>
+Bienvenido a <strong>The Hobbies Store</strong>, donde la adrenalina no es opcional. Este es el lugar para quienes viven la velocidad, dominan el aire y exigen potencia real: aviones, drones, carros y tanques a control remoto diseñados para llevarte al límite.
+</p>
+
+<p>
+Aquí no hay juguetes comunes. Encuentra baterías de alto rendimiento, controles de precisión y accesorios profesionales que marcan la diferencia entre jugar… y competir en serio. Si buscas más potencia, más control y más emoción, acabas de aterrizar en el sitio correcto.
+</p>
+
+<div class="cards">
+  <div class="card texto">
+    <h2>A-10 WARTHOG</h2>
+    <p>El aeromodelo a control remoto inspirado en el A-10 Warthog es una réplica impresionante diseñada para los amantes de la aviación y el modelismo. Este modelo suele estar fabricado en materiales ligeros como espuma EPO, lo que le da resistencia y facilidad de vuelo. Cuenta con un sistema de control remoto de 2.4 GHz que permite una conexión estable y sin interferencias, ideal para maniobras precisas. Su autonomía de batería varía entre 10 y 20 minutos, dependiendo del uso del acelerador y las condiciones de vuelo. Generalmente utiliza baterías LiPo recargables, que ofrecen buena potencia y eficiencia. El diseño del aeromodelo replica fielmente la estética del A-10, incluyendo sus alas rectas y doble turbina. Algunos modelos incluyen tren de aterrizaje retráctil y luces LED para mayor realismo. Es adecuado tanto para pilotos intermedios como avanzados debido a su estabilidad en el aire. Además, permite realizar acrobacias básicas y vuelos a baja velocidad con gran control. Sin duda, es una excelente opción para quienes buscan una experiencia de vuelo realista y emocionante.
+    </p>
+  </div>
+
+  <div class="card imagen">
+    <img src="https://image.made-in-china.com/155f0j00feolGSJskOqp/a-10-Warthog-Edf-Remote-Control-Airplane-10-Channels-Giant-Scale-RC-Planes.jpg" alt="A-10 Warthog">
+  
+  </div>
+
+</div>
+   
+  
+
+<h2>Déjanos tus datos</h2>
+
+<div class="formulario" id="contacto">
+<form>
+
+<label>Nombre:</label><br>
+<input type="text" placeholder="Escribe tu nombre"><br><br>
+
+<label>Correo electrónico:</label><br>
+<input type="email" placeholder="ejemplo@email.com"><br><br>
+
+<label>Teléfono:</label><br>
+<input type="tel"><br><br>
+
+<label>Mensaje:</label><br>
+<textarea rows="4"></textarea><br><br>
+
+<button type="submit">Enviar</button>
+
+</form>
+</div>
+
+<footer id="redes">
+<p>&copy; 2026 The Hobbies Store. Todos los derechos reservados by Giaco</p>
+
+<nav>
+  <a href="https://www.facebook.com">
+    <img src="C:/Users/giaco/OneDrive/Escritorio/Desarrollo web/The Hobbies Store/assets/logos/facebook.png" alt="Facebook">
+  </a>
+
+  <a href="https://www.x.com">
+    <img src="C:/Users/giaco/OneDrive/Escritorio/Desarrollo web/The Hobbies Store/assets/logos/x.png" alt="X">
+  </a>
+
+  <a href="https://www.instagram.com">
+    <img src="C:/Users/giaco/OneDrive/Escritorio/Desarrollo web/The Hobbies Store/assets/logos/instagram.png" alt="Instagram">
+  </a>
+</nav>
+
+</footer>
+
+</body>
+</html>
