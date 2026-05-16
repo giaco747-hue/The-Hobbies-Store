@@ -1,0 +1,31 @@
+// BOTON
+
+.volver{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    padding:12px 20px;
+
+    border:none;
+    border-radius:12px;
+
+    background:$primary;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    z-index:999;
+
+    &:hover{
+        transform:scale(1.05);
+        background:#ff5555;
+    }
+}

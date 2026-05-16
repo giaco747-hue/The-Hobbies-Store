@@ -1,20 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 40px;
-  min-height: 100vh;
-  background-image: url("../assets/fondo-retro.png.png");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  backdrop-filter: brightness(0.8);
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .header h1 {
   margin: 0;
   font-size: 60px;
@@ -58,25 +41,6 @@ body {
   box-shadow: 0 0 30px rgb(255, 49, 49);
 }
 
-.volver {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 12px;
-  background: #ff3131;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  z-index: 999;
-}
-.volver:hover {
-  transform: scale(1.05);
-  background: #ff5555;
-}
-
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -100,7 +64,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
   transition: 0.3s;
-  box-shadow: 0 0 10px rgba(255, 49, 49, 0.5);
+  box-shadow: 0 0 10px #ff3131;
   transition: 0.3s;
 }
 .card-rc:hover {
@@ -159,6 +123,25 @@ body {
 .card-content ul li:hover {
   background: rgba(255, 49, 49, 0.3);
   transform: translateX(5px);
+}
+
+.volver {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #ff3131;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 999;
+}
+.volver:hover {
+  transform: scale(1.05);
+  background: #ff5555;
 }
 
 @media (max-width: 900px) {

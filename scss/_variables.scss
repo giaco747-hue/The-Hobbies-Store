@@ -1,0 +1,15 @@
+// VARIABLES
+
+$primary:#ff3131;
+$dark:rgba(0,0,0,0.75);
+$card-bg:rgba(0,0,0,0.45);
+
+// MIXIN
+
+@mixin neon-shadow($color){
+
+    box-shadow:
+    0 0 10px $color;
+
+    transition:0.3s;
+}

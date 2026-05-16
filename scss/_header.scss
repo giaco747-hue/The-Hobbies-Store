@@ -1,0 +1,75 @@
+// HEADER
+
+    .header h1{
+
+    margin:0;
+
+    font-size:60px;
+
+    font-family:"Honk", system-ui;
+}
+.header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding:1px 35px;
+
+    margin-bottom:40px;
+
+    background:$dark;
+
+    border-bottom:3px solid $primary;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+.logo-container{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-direction:row;
+}
+
+.logo-container h1{
+
+    margin:0;
+
+    white-space:nowrap;
+}
+
+// LOGO
+
+
+.logo{
+
+    width:110px;
+
+    height:auto;
+
+    border-radius:50%;
+
+    border:3px solid $primary;
+
+    box-shadow:
+    0 0 15px rgba(255,49,49,0.7);
+
+    transition:0.3s;
+
+    &:hover{
+
+        transform:scale(1.08);
+
+        box-shadow:
+        0 0 30px rgba(255,49,49,1);
+    }
+}
