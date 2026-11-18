@@ -9,84 +9,114 @@
 <link rel="shortcut icon" href="assets/Tienda de hobbies retro y neón.png" />
 
 <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="css/styles.css">
 
 </head>
 
 <body>
 
-<!-- BOTON FLOTANTE -->
-
-<button class="volver"
-onclick="window.location.href='index.html'">
-
-⬅ Volver
-
-</button>
-
 <!-- HEADER -->
-
 <header class="header">
-
     <div class="logo-container">
-
-        <img
-        src="assets/Tienda de hobbies retro y neón.png"
-        class="logo">
-
+        <img src="assets/Tienda de hobbies retro y neón.png" class="logo">
         <h1>Drones RC</h1>
-
     </div>
-
+    <div class="header-actions">
+        <span class="user-name" id="user-name"></span>
+        <button class="logout-btn" id="logout-btn" style="display:none;" title="Cerrar sesión">Salir</button>
+        <button id="login-btn" title="Iniciar sesión"><i class="bi bi-person-circle"></i></button>
+        <button id="cart-btn" title="Carrito"><i class="bi bi-cart3"></i><span id="cart-badge">0</span></button>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
+        <div class="drawer-header">
+            <span>Menú</span>
+            <button class="drawer-close" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+        <a href="aviones.html"><i class="bi bi-airplane-fill"></i> Aviones</a>
+        <a href="carros.html"><i class="bi bi-car-front-fill"></i> Carros</a>
+        <a href="Tanques.html"><i class="bi bi-shield-shaded"></i> Tanques</a>
+        <a href="Drones.html"><i class="bi bi-broadcast-pin"></i> Drones</a>
+        <a href="galeria.html"><i class="bi bi-images"></i> Galería</a>
+    </nav>
 </header>
 
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="login-modal">
+  <div class="login-modal-content">
+    <button class="modal-close" id="login-close">&times;</button>
+    <form id="login-form">
+      <h2>Iniciar Sesión</h2>
+      <label for="login-email">Correo electrónico</label>
+      <input type="email" id="login-email" placeholder="ejemplo@email.com" required>
+      <label for="login-pass">Contraseña</label>
+      <input type="password" id="login-pass" placeholder="Tu contraseña" required>
+      <button type="submit" class="login-submit">Entrar</button>
+      <p class="switch-form">¿No tienes cuenta? <a href="#" id="show-register">Crear cuenta</a></p>
+    </form>
+    <form id="register-form" style="display:none;">
+      <h2>Crear Cuenta</h2>
+      <label for="reg-name">Nombre</label>
+      <input type="text" id="reg-name" placeholder="Tu nombre" required>
+      <label for="reg-email">Correo electrónico</label>
+      <input type="email" id="reg-email" placeholder="ejemplo@email.com" required>
+      <label for="reg-pass">Contraseña</label>
+      <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+      <button type="submit" class="login-submit">Registrarse</button>
+      <p class="switch-form">¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-panel-header">
+    <h2>🛒 Mi Carrito</h2>
+    <button class="cart-close-btn" id="cart-close">&times;</button>
+  </div>
+  <div class="cart-panel-body" id="cart-items">
+    <p class="cart-empty">Tu carrito está vacío</p>
+  </div>
+  <div class="cart-panel-footer">
+    <div class="cart-total" id="cart-total"></div>
+    <button class="cart-clear-btn" id="cart-clear">Vaciar carrito</button>
+  </div>
+</div>
 
 <!-- GRID DE CARDS -->
-
 <section class="cards-container">
 
     <!-- CARD 1 -->
     <div class="card-rc">
-
-        <img src="assets/dron dji avata 360.jpg">
-
+        <img src="assets/dron dji avata 360.jpg" alt="Dji Avata 360">
         <div class="card-content">
-
             <h2>Dji Avata 360</h2>
-
             <p>
             Drone de alta tecnologia con geolocalización precisa, posee camara capaz de grabar en 4k con estabilización avanzada y vuelo inteligente. Resistente al viento y guiado por GPS con control remoto de largo alcance.
             </p>
-            
             <ul>
                 <li>control remoto de 5.0 GHz de doble via</li>
                 <li>Autonomía: 25 minutos</li>
                 <li>Peso: 1 kg</li>
                 <li>Resistente al viento: hasta 10 m/s</li>
-                <li>Rango de vuelo: hasta 10 km</li>    
+                <li>Rango de vuelo: hasta 10 km</li>
                 <li>Funciones inteligentes: seguimiento de objetos, retorno automático, modos de vuelo preestablecidos</li>
                 <li>bateria de 3000 mAh</li>
             </ul>
-            <button class="buy-btn">
-
-    Comprar
-
-</button>
-
+            <span class="product-price" data-price="699.99">$699.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
-
     </div>
 
     <!-- CARD 2 -->
     <div class="card-rc">
-
-        <img src="assets/dron dji more combo + helmet visor.jpg">
-
+        <img src="assets/dron dji more combo + helmet visor.jpg" alt="Dji Mavick 5 + fly more combo">
         <div class="card-content">
-
             <h2>Dji Mavick 5 + fly more combo</h2>
-
             <p>
             Drone de capacidad superior de tope de gama, tecnologia de ultima generación con fotos y video en calidad 8k, autonomia de vuelo extendida y compatibilidad con accesorios avanzados como el casco de realidad virtual DJI Goggles para una experiencia de vuelo inmersiva.
             </p>
@@ -95,31 +125,22 @@ onclick="window.location.href='index.html'">
                 <li>Autonomía: 35 minutos</li>
                 <li>Peso: 1.8 kg</li>
                 <li>Resistente al viento: hasta 12 m/s</li>
-                <li>Rango de vuelo: hasta 15 km</li>    
+                <li>Rango de vuelo: hasta 15 km</li>
                 <li>Funciones inteligentes: seguimiento de objetos, retorno automático, modos de vuelo preestablecidos, evitación de obstáculos avanzada</li>
                 <li>bateria de 5000 mAh</li>
             </ul>
-            <button class="buy-btn">
-
-    Comprar
-
-</button>
-
+            <span class="product-price" data-price="1249.99">$1249.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
-
     </div>
 
     <!-- CARD 3 -->
     <div class="card-rc">
-
-        <img src="assets/drone dji air 3.jpg">
-
+        <img src="assets/drone dji air 3.jpg" alt="Dji Air 3">
         <div class="card-content">
-
             <h2>Dji Air 3</h2>
-
             <p>
-           Drone de alta tecnología con cámara de 48 MP con estabilización avanzada y vuelo inteligente.resistente al viento.guiado por GPS y control remoto de largo alcance.  
+            Drone de alta tecnología con cámara de 48 MP con estabilización avanzada y vuelo inteligente.resistente al viento.guiado por GPS y control remoto de largo alcance.
             </p>
             <ul>
                 <li>control remoto de 5.0 GHz</li>
@@ -128,24 +149,16 @@ onclick="window.location.href='index.html'">
                 <li>Resistente al viento: hasta 8 m/s</li>
                 <li>Rango de vuelo: hasta 10 km</li>
             </ul>
-<button class="buy-btn">
-
-    Comprar
-
-</button>
+            <span class="product-price" data-price="799.99">$799.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
-
     </div>
 
     <!-- CARD 4 -->
     <div class="card-rc">
-
-        <img src="assets/drone insta 4k + combo.jpg">
-
+        <img src="assets/drone insta 4k + combo.jpg" alt="Drone Insta 4k">
         <div class="card-content">
-
             <h2>Drone Insta 4k</h2>
-
             <p>
             Drone compacto y ligero con cámara de 4K, ideal para principiantes. Control remoto de largo alcance y funciones inteligentes como seguimiento de objetos y retorno automático.Drone capaz de grabar en 4k con estabilización avanzada y vuelo inteligente. Resistente al viento y guiado por GPS con control remoto de largo alcance.
             </p>
@@ -157,26 +170,17 @@ onclick="window.location.href='index.html'">
                 <li>Rango de vuelo: hasta 8 km</li>
                 <li>Funciones inteligentes: seguimiento de objetos, retorno automático, modos de vuelo preestablecidos</li>
                 <li>bateria de 2000 mAh</li>
-                
             </ul>
-<button class="buy-btn">
-
-    Comprar
-
-</button>
+            <span class="product-price" data-price="499.99">$499.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
-
     </div>
 
     <!-- CARD 5 -->
     <div class="card-rc">
-
-        <img src="assets/dji flip.png">
-
+        <img src="assets/dji flip.png" alt="Dji Flip drone">
         <div class="card-content">
-
             <h2>Dji Flip drone</h2>
-
             <p>
             Drone liviano y compacto que pesa tan solo 850 gramos, con camara capaz de grabar en video y foto en 4k, drone rapido y agil con control remoto de largo alcance y funciones inteligentes como seguimiento de objetos y retorno automático.
             </p>
@@ -185,19 +189,104 @@ onclick="window.location.href='index.html'">
                 <li>Autonomía: 18 minutos</li>
                 <li>Peso: 800 gramos</li>
                 <li>bateria de 2500 mAh</li>
-            </ul>   
-        <button class="buy-btn">
-
-    Comprar
-
-</button>
-        
-    
+            </ul>
+            <span class="product-price" data-price="349.99">$349.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
+    </div>
 
+    <!-- CARD 6 -->
+    <div class="card-rc">
+        <img src="assets/mini dron dji uhd.jpg" alt="DJI Mini 4 UHD">
+        <div class="card-content">
+            <h2>DJI Mini 4 UHD</h2>
+            <p>Drone ultra compacto y ligero con calidad de imagen profesional</p>
+            <ul>
+                <li>Control 5.0 GHz</li>
+                <li>Autonomía 35 min</li>
+                <li>Peso 249g</li>
+                <li>Cámara 4K UHD</li>
+                <li>Rango: 12 km</li>
+            </ul>
+            <span class="product-price" data-price="599.99">$599.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card-rc">
+        <img src="assets/drone dji air 3.jpg" alt="DJI Air 3 Max">
+        <div class="card-content">
+            <h2>DJI Air 3 Max</h2>
+            <p>Versión mejorada con sensor doble y zoom óptico 3x</p>
+            <ul>
+                <li>Control 5.0 GHz doble vía</li>
+                <li>Autonomía 40 min</li>
+                <li>Peso 1.3 kg</li>
+                <li>Cámara 48MP</li>
+                <li>Rango: 15 km</li>
+            </ul>
+            <span class="product-price" data-price="899.99">$899.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card-rc">
+        <img src="assets/dron dji avata 360.jpg" alt="DJI Avata Explorer">
+        <div class="card-content">
+            <h2>DJI Avata Explorer</h2>
+            <p>Drone FPV inmersivo para exploración y aventura</p>
+            <ul>
+                <li>Control 5.0 GHz</li>
+                <li>Autonomía 22 min</li>
+                <li>Peso 900g</li>
+                <li>Video 4K 60fps</li>
+                <li>Compatible con DJI Goggles</li>
+            </ul>
+            <span class="product-price" data-price="749.99">$749.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="card-rc">
+        <img src="assets/dji flip.png" alt="DJI Flip Sport">
+        <div class="card-content">
+            <h2>DJI Flip Sport</h2>
+            <p>Drone ágil con modo acrobático y protección de hélices</p>
+            <ul>
+                <li>Control 5.0 GHz</li>
+                <li>Autonomía 20 min</li>
+                <li>Peso 750g</li>
+                <li>batería 2800 mAh</li>
+            </ul>
+            <span class="product-price" data-price="449.99">$449.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="card-rc">
+        <img src="assets/drone insta 4k + combo.jpg" alt="Insta Drone 8K Pro">
+        <div class="card-content">
+            <h2>Insta Drone 8K Pro</h2>
+            <p>Drone profesional de filmación con estabilización de 3 ejes</p>
+            <ul>
+                <li>Control 5.0 GHz doble vía</li>
+                <li>Autonomía 45 min</li>
+                <li>Peso 1.5 kg</li>
+                <li>Cámara 8K</li>
+                <li>Rango: 20 km</li>
+                <li>Funciones inteligentes avanzadas</li>
+            </ul>
+            <span class="product-price" data-price="1199.99">$1199.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
     </div>
 
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>

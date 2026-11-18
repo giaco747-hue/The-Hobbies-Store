@@ -1,64 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description"
-content="Descubre tanques RC de colección con gran detalle, potencia y maniobrabilidad en The Hobbies Store.">
-
-<title>Tanques RC - The Hobbies Store</title>
-
-<link rel="shortcut icon" href="assets/Tienda de hobbies retro y neón.png" />
-
-<link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre tanques RC de colección con gran detalle, potencia y maniobrabilidad en The Hobbies Store.">
+    <title>Tanques RC - The Hobbies Store</title>
+    <link rel="shortcut icon" href="assets/Tienda de hobbies retro y neón.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
 
-<!-- BOTON FLOTANTE -->
-
-<button class="volver"
-onclick="window.location.href='index.html'">
-
-⬅ Volver
-
-</button>
-
 <!-- HEADER -->
-
 <header class="header">
-
     <div class="logo-container">
-
-        <img
-        src="assets/Tienda de hobbies retro y neón.png"
-        class="logo">
-
+        <img src="assets/Tienda de hobbies retro y neón.png" class="logo">
         <h1>Tanques RC</h1>
-
     </div>
-
+    <div class="header-actions">
+        <span class="user-name" id="user-name"></span>
+        <button class="logout-btn" id="logout-btn" style="display:none;" title="Cerrar sesión">Salir</button>
+        <button id="login-btn" title="Iniciar sesión"><i class="bi bi-person-circle"></i></button>
+        <button id="cart-btn" title="Carrito"><i class="bi bi-cart3"></i><span id="cart-badge">0</span></button>
+    </div>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-menu" id="nav-menu">
+        <div class="drawer-header">
+            <span>Menú</span>
+            <button class="drawer-close" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <a href="index.html"><i class="bi bi-house-door-fill"></i> Inicio</a>
+        <a href="aviones.html"><i class="bi bi-airplane-fill"></i> Aviones</a>
+        <a href="carros.html"><i class="bi bi-car-front-fill"></i> Carros</a>
+        <a href="Tanques.html"><i class="bi bi-shield-shaded"></i> Tanques</a>
+        <a href="Drones.html"><i class="bi bi-broadcast-pin"></i> Drones</a>
+        <a href="galeria.html"><i class="bi bi-images"></i> Galería</a>
+    </nav>
 </header>
-<!-- GRID DE CARDS -->
 
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="login-modal">
+  <div class="login-modal-content">
+    <button class="modal-close" id="login-close">&times;</button>
+    <form id="login-form">
+      <h2>Iniciar Sesión</h2>
+      <label for="login-email">Correo electrónico</label>
+      <input type="email" id="login-email" placeholder="ejemplo@email.com" required>
+      <label for="login-pass">Contraseña</label>
+      <input type="password" id="login-pass" placeholder="Tu contraseña" required>
+      <button type="submit" class="login-submit">Entrar</button>
+      <p class="switch-form">¿No tienes cuenta? <a href="#" id="show-register">Crear cuenta</a></p>
+    </form>
+    <form id="register-form" style="display:none;">
+      <h2>Crear Cuenta</h2>
+      <label for="reg-name">Nombre</label>
+      <input type="text" id="reg-name" placeholder="Tu nombre" required>
+      <label for="reg-email">Correo electrónico</label>
+      <input type="email" id="reg-email" placeholder="ejemplo@email.com" required>
+      <label for="reg-pass">Contraseña</label>
+      <input type="password" id="reg-pass" placeholder="Crea una contraseña" required>
+      <button type="submit" class="login-submit">Registrarse</button>
+      <p class="switch-form">¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar sesión</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-panel-header">
+    <h2>🛒 Mi Carrito</h2>
+    <button class="cart-close-btn" id="cart-close">&times;</button>
+  </div>
+  <div class="cart-panel-body" id="cart-items">
+    <p class="cart-empty">Tu carrito está vacío</p>
+  </div>
+  <div class="cart-panel-footer">
+    <div class="cart-total" id="cart-total"></div>
+    <button class="cart-clear-btn" id="cart-clear">Vaciar carrito</button>
+  </div>
+</div>
+
+<!-- GRID DE CARDS -->
 <section class="cards-container tanks-page">
 
     <!-- CARD 1 -->
     <div class="card-rc">
-
-        <img src="assets/tanque 1.jpg" alt="Radio controlled German army tank model shown from a front three quarter angle on a neutral background">
-
+        <img src="assets/tanque 1.jpg" alt="Tanque Ejercito Aleman">
         <div class="card-content">
-
             <h2>Tanque Ejercito Aleman</h2>
-
             <p>
-           Replica a control remoto del tanque de guerra aleman, con gran velocidad, maniobrabilidad avanzada y estructura ligera.Gran capacidad de manejo y giros precisos.Torreta movible y cañon elevable para una experiencia de combate realista.
+                Replica a control remoto del tanque de guerra aleman, con gran velocidad, maniobrabilidad avanzada y estructura ligera. Gran capacidad de manejo y giros precisos. Torreta movible y cañon elevable para una experiencia de combate realista.
             </p>
-            
             <ul>
                 <li>control remoto de 2.4 GHz</li>
                 <li>Autonomía: 30 minutos</li>
@@ -67,27 +102,18 @@ onclick="window.location.href='index.html'">
                 <li>Velocidad máxima: 15 km/h</li>
                 <li>Funciones inteligentes: modos de manejo inteligentes, efectos y sonidos realistas, sistema de suspensión ajustable</li>
             </ul>
-            <button class="buy-btn">
-
-    Comprar
-
-</button>
-
+            <span class="product-price" data-price="219.99">$219.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
-
     </div>
 
     <!-- CARD 2 -->
     <div class="card-rc">
-
-        <img src="assets/tanque abrams.jpg" alt="Radio controlled tanque abrams model shown from a front three quarter angle on a neutral background">
-
+        <img src="assets/tanque abrams.jpg" alt="Tanque Abrams">
         <div class="card-content">
-
             <h2>Tanque Abrams</h2>
-
             <p>
-            Replica a control remoto del tanque de guerra americano abrams, con gran velocidad, maniobrabilidad avanzada y estructura ligera.Gran capacidad de manejo y giros precisos.Torreta movible y cañon elevable para una experiencia de combate realista.
+                Replica a control remoto del tanque de guerra americano abrams, con gran velocidad, maniobrabilidad avanzada y estructura ligera. Gran capacidad de manejo y giros precisos. Torreta movible y cañon elevable para una experiencia de combate realista.
             </p>
             <ul>
                 <li>control remoto de 2.4 GHz</li>
@@ -97,27 +123,19 @@ onclick="window.location.href='index.html'">
                 <li>Velocidad máxima: 60 km/h</li>
                 <li>Funciones inteligentes: modos de manejo inteligentes, efectos y sonidos realistas, sistema de suspensión ajustable</li>
             </ul>
-            <button class="buy-btn">
-
-    Comprar
-
-</button>
-
+            <span class="product-price" data-price="289.99">$289.99</span>
+            <button class="buy-btn">Comprar</button>
         </div>
-
     </div>
 
     <!-- CARD 3 -->
     <div class="card-rc">
-
-        <img src="assets/tanque leopard.jpg" alt="Tanque leopard del ejercito aleman a control remoto">
-
+        <img src="assets/tanque leopard.jpg" alt="Tanque Leopard">
         <div class="card-content">
-
             <h2>Tanque Leopard</h2>
-
             <p>
-            Tanque de guerra Aleman a control remoto, gran capacidad de carga y realismo de combate. Luces y sonido de guerra para una experiencia inmersiva. Ideal para entusiastas de la historia militar y el modelismo.
+                Tanque de guerra Aleman a control remoto, gran capacidad de carga y realismo de combate. Luces y sonido de guerra para una experiencia inmersiva. Ideal para entusiastas de la historia militar y el modelismo.
+            </p>
             <ul>
                 <li>control remoto de 2.4 GHz</li>
                 <li>Autonomía: 20 minutos</li>
@@ -126,18 +144,108 @@ onclick="window.location.href='index.html'">
                 <li>Velocidad máxima: 15 km/h</li>
                 <li>Cañon elevable y torreta movible</li>
             </ul>
-<button class="buy-btn">
-
-    Comprar
-
-</button>
-      
-
+            <span class="product-price" data-price="259.99">$259.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
     </div>
-</div>
-    
+
+    <!-- CARD 4 -->
+    <div class="card-rc">
+        <img src="assets/rc tank.jpg" alt="Tiger I Classic">
+        <div class="card-content">
+            <h2>Tiger I Classic</h2>
+            <p>Réplica del legendario Tiger I alemán con detalle excepcional.</p>
+            <ul>
+                <li>Control 2.4 GHz</li>
+                <li>Autonomía: 30 min</li>
+                <li>Peso: 2.0 kg</li>
+                <li>Velocidad máx: 12 km/h</li>
+                <li>Batería 5000 mAh</li>
+                <li>Torreta motorizada con giro 360°, sonidos de combate realistas</li>
+            </ul>
+            <span class="product-price" data-price="299.99">$299.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card-rc">
+        <img src="assets/tanque 1.jpg" alt="T-90 Ruso">
+        <div class="card-content">
+            <h2>T-90 Ruso</h2>
+            <p>Tanque de combate ruso moderno con blindaje reactivo.</p>
+            <ul>
+                <li>Control 2.4 GHz</li>
+                <li>Autonomía: 25 min</li>
+                <li>Peso: 1.8 kg</li>
+                <li>Velocidad máx: 15 km/h</li>
+                <li>Batería 4500 mAh</li>
+                <li>Cañón elevable y disparo infrarrojo</li>
+            </ul>
+            <span class="product-price" data-price="279.99">$279.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card-rc">
+        <img src="assets/tanque abrams.jpg" alt="Churchill Tank">
+        <div class="card-content">
+            <h2>Churchill Tank</h2>
+            <p>Tanque pesado británico con blindaje reforzado y gran estabilidad.</p>
+            <ul>
+                <li>Control 2.4 GHz</li>
+                <li>Autonomía: 28 min</li>
+                <li>Peso: 2.2 kg</li>
+                <li>Velocidad máx: 10 km/h</li>
+                <li>Batería 5000 mAh</li>
+                <li>Orugas de metal</li>
+            </ul>
+            <span class="product-price" data-price="249.99">$249.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card-rc">
+        <img src="assets/tanque leopard.jpg" alt="Panther Ausf.G">
+        <div class="card-content">
+            <h2>Panther Ausf.G</h2>
+            <p>Tanque medio alemán con excelente balance entre velocidad y blindaje.</p>
+            <ul>
+                <li>Control 2.4 GHz</li>
+                <li>Autonomía: 35 min</li>
+                <li>Peso: 1.9 kg</li>
+                <li>Velocidad máx: 14 km/h</li>
+                <li>Batería 5500 mAh</li>
+                <li>Torreta motorizada, efectos de humo y sonido</li>
+            </ul>
+            <span class="product-price" data-price="319.99">$319.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card-rc">
+        <img src="assets/tank hd.jpg" alt="Sherman M4">
+        <div class="card-content">
+            <h2>Sherman M4</h2>
+            <p>Tanque americano icónico de la WWII con gran maniobrabilidad.</p>
+            <ul>
+                <li>Control 2.4 GHz</li>
+                <li>Autonomía: 22 min</li>
+                <li>Peso: 1.7 kg</li>
+                <li>Velocidad máx: 12 km/h</li>
+                <li>Batería 4000 mAh</li>
+                <li>Luces LED y efectos de sonido</li>
+            </ul>
+            <span class="product-price" data-price="229.99">$229.99</span>
+            <button class="buy-btn">Comprar</button>
+        </div>
+    </div>
 
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>
